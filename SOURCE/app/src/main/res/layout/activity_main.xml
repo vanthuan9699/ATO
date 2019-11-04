@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal"/>
+    <EditText
+        android:id="@+id/edt_UserName"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginHorizontal="30dp"
+        android:hint="UserName"
+        android:paddingLeft="25sp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/edt_custom"
+        />
+    <EditText
+        android:id="@+id/edt_PassWord"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginHorizontal="30dp"
+        android:hint="PassWord"
+        android:paddingLeft="25sp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/edt_custom"
+        android:layout_marginTop="10dp"
+        />
+    <Button
+        android:id="@+id/btn_dang_nhap"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/button_custom"
+        android:text="Đăng Nhập"
+        android:textColor="#fff" />
+
+
+</LinearLayout>
