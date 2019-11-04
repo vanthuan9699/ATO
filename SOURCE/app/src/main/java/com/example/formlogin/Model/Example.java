@@ -3,7 +3,9 @@ package com.example.formlogin.Model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Example {
+import java.io.Serializable;
+
+public class Example implements Serializable {
 
 @SerializedName("username")
 @Expose

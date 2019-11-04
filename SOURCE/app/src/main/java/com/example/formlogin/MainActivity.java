@@ -49,23 +49,24 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                         String strJson = null;
-                        try {
-                            strJson = response.body().string();
-                            Gson gson = new Gson();
-                            Example example = gson.fromJson(strJson, Example.class);
-                            //laydulieu
-                            String ten_user = example.getUsername();
-                            String ten_pass = example.getPassword();
-                            //kiemtra
-                            if (username.equals(ten_user)){
-                                Toast.makeText(MainActivity.this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
-
-                            }else {
-                                Toast.makeText(MainActivity.this, "Đăng nhập thất bại", Toast.LENGTH_SHORT).show();
-                            }
-                        } catch (IOException e) {
-                            e.printStackTrace();
+                        if (response.isSuccessful()){
+                            Toast.makeText(MainActivity.this, "Oke" + response.body().toString(), Toast.LENGTH_SHORT).show();
+                            //viet
                         }
+//
+//                        strJson = response.body().toString();
+//                        Gson gson = new Gson();
+//                        Example example = gson.fromJson(strJson, Example.class);
+//                        //laydulieu
+//                        String ten_user = example.getUsername();
+//                        String ten_pass = example.getPassword();
+//                        //kiemtra
+//                        if (username.equals(ten_user)){
+//                            Toast.makeText(MainActivity.this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
+//
+//                        }else {
+//                            Toast.makeText(MainActivity.this, "Đăng nhập thất bại", Toast.LENGTH_SHORT).show();
+//                        }
                     }
 
                     @Override
@@ -78,18 +79,20 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void init(){
+    private void init() {
         btnDangNhap = findViewById(R.id.btn_dang_nhap);
         edtUserName = findViewById(R.id.edt_UserName);
         edtPassWord = findViewById(R.id.edt_PassWord);
     }
-    class GetLogin{
-        String UserName, PassWord, Storecode, Apiname;
-        public GetLogin(String username, String password, String store_code, String api_name ){
-            UserName = username;
-            PassWord = password;
-            Storecode = store_code;
-            Apiname = api_name;
+
+    class GetLogin {
+        String username, password, store_code, api_name;
+
+        public GetLogin(String username, String password, String store_code, String api_name) {
+            this.username = username;
+            this.password = password;
+            this.store_code = store_code;
+            this.api_name = api_name;
         }
     }
 }
